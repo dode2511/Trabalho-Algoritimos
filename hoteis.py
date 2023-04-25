@@ -60,6 +60,15 @@ def listar():
 
 
 def pesquisar():
+  titulo("Pesquisa por Nota(☆)")
+
+  pesq = input("☆: ")
+
+  print("Nº Nome do Hotel....... Nota Valor.....")
+  
+  for x, (hoteis, notas, valores) in enumerate(zip(hotel, nota, valor), start=1):
+    if pesq in nota:
+      print(f"{x:2} {hoteis:20}  {notas:3}  {valores}")
   pass
 
 
