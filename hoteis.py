@@ -46,12 +46,16 @@ def cadastrar():
   nota.append(notas)
   valor.append(valores)  
   print("Hotel Cadastrado.")
-  pass
+  
 
 
 
 def listar():
-  pass
+  titulo("Lista de Hoteis Cadastrados")
+  print("Nº Nome do Hotel....... Nota Valor.....")
+  for x, (hoteis, notas, valores) in enumerate(zip(hotel, nota, valor), start=1):
+    print(f"{x:2} {hoteis:20}  {notas:3}  {valores}")
+  
 
 
 
