@@ -91,7 +91,17 @@ def deletar():
 
 
 def totalizar():
-  pass
+  titulo("Total de  ☆")
+
+  num = len(hotel)
+
+  soma = sum(nota)
+
+
+  print(f"Nº Hotéis Cadastrados: {num}")
+
+
+  print(f"Total  ☆: {soma:9.2f}")
 
 
 
