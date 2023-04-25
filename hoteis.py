@@ -37,6 +37,15 @@ def titulo(texto, sublinhado="-"):
 
 
 def cadastrar():
+  titulo("Incluir hotel")
+  hoteis = input("Nome do Hotel: ") 
+  notas = input(int("nota(1-5): "))
+  valores = float(input("Valor diaria em R$: "))
+
+  hotel.append(hoteis)
+  nota.append(notas)
+  valor.append(valores)  
+  print("Hotel Cadastrado.")
   pass
 
 
