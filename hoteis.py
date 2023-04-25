@@ -25,3 +25,10 @@ def salva_dados():
   
     for (hoteis, notas, valores) in zip(hotel, nota, valor):
       arq.write(f"{hoteis};{notas};{valores}\n")
+
+
+
+def titulo(texto, sublinhado="-"):
+  print()
+  print(texto)
+  print(sublinhado*40)
