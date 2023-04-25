@@ -32,3 +32,66 @@ def titulo(texto, sublinhado="-"):
   print()
   print(texto)
   print(sublinhado*40)
+
+
+
+
+def cadastrar():
+  pass
+
+
+
+def listar():
+  pass
+
+
+
+def pesquisar():
+  pass
+
+
+
+def deletar():
+  pass
+
+
+
+def totalizar():
+  pass
+
+
+
+def descontar():
+  pass
+
+
+
+
+carregar_dados()
+
+while True:
+  titulo("Cadastro de instrumentos musicais", "=")
+  print("1. Incluir hotel")
+  print("2. Listar hotéis")
+  print("3. Pesquisar por nota(☆) dos hotéis (1-5)")
+  print("4. Excluir hotel")
+  print("5. Pesquisa com totalização")
+  print("6. Conceder Desconto (%)")
+  print("7. Finalizar")
+  opcao = int(input("Opção: "))  
+  if opcao == 1:
+    cadastrar()
+  elif opcao == 2:
+    listar()
+  elif opcao == 3:
+    pesquisar()
+  elif opcao == 4:
+    deletar()
+  elif opcao == 5:
+    totalizar()
+  elif opcao == 6 :
+    descontar()
+  else:
+   
+    salva_dados()
+    break
