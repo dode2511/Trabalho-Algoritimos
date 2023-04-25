@@ -4,7 +4,7 @@ nota = []
 valor = []
 
 
-def carregar_dados_do_arquivo():
+def carregar_dados():
   if not os.path.isfile("hoteis.csv"):
     return
   
@@ -16,3 +16,12 @@ def carregar_dados_do_arquivo():
       hotel.append(partes[0])
       nota.append(int(partes[1]))
       valor.append(float(partes[2][0:-1]))    
+
+
+
+def salva_dados():
+  with open("hoteis.csv", "w") as arq:
+    
+  
+    for (hoteis, notas, valores) in zip(hotel, nota, valor):
+      arq.write(f"{hoteis};{notas};{valores}\n")
