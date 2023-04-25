@@ -69,12 +69,24 @@ def pesquisar():
   for x, (hoteis, notas, valores) in enumerate(zip(hotel, nota, valor), start=1):
     if pesq in nota:
       print(f"{x:2} {hoteis:20}  {notas:3}  {valores}")
-  pass
+  
 
 
 
 def deletar():
-  pass
+  listar() 
+
+  titulo("Exclusão de Hoteis")
+  num = int(input("Nº do Hotel a Deletar: "))
+
+  if num <= 0 or num > len(hotel):
+    print("Número inválido")
+    return
+  
+  hotel.pop(num-1)
+  nota.pop(num-1)
+  valor.pop(num-1)
+  
 
 
 
