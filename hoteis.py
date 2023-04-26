@@ -15,7 +15,7 @@ def carregar_dados():
       partes = linha.split(";")
       hotel.append(partes[0])
       nota.append(int(partes[1]))
-      valor.append(float(partes[2][0:-1]))    
+      valor.append(int(partes[2]))    
 
 
 
@@ -39,8 +39,8 @@ def titulo(texto, sublinhado="-"):
 def cadastrar():
   titulo("Incluir hotel")
   hoteis = input("Nome do Hotel: ") 
-  notas = input(int("nota(1-5): "))
-  valores = float(input("Valor diaria em R$: "))
+  notas = int(input("nota(1-5): "))
+  valores = int(input("Valor diaria em R$: "))
 
   hotel.append(hoteis)
   nota.append(notas)
@@ -52,7 +52,7 @@ def cadastrar():
 
 def listar():
   titulo("Lista de Hoteis Cadastrados")
-  print("Nº Nome do Hotel....... Nota Valor.....")
+  print("Nº Nome do Hotel........  1Nota Valor.....")
   for x, (hoteis, notas, valores) in enumerate(zip(hotel, nota, valor), start=1):
     print(f"{x:2} {hoteis:20}  {notas:3}  {valores}")
   
@@ -62,14 +62,13 @@ def listar():
 def pesquisar():
   titulo("Pesquisa por Nota(☆)")
 
-  pesq = input("☆: ")
+  pesq = int(input("☆: "))
 
-  print("Nº Nome do Hotel....... Nota Valor.....")
+  print("Nº Nome do Hotel........ Nota  Valor.....")
   
-  for x, (hoteis, notas, valores) in enumerate(zip(hotel, nota, valor), start=1):
-    if pesq in nota:
+  for x, (hoteis,notas, valores) in enumerate(zip(hotel, nota, valor), start=1):
+    if pesq == notas:
       print(f"{x:2} {hoteis:20}  {notas:3}  {valores}")
-  
 
 
 
@@ -86,6 +85,7 @@ def deletar():
   hotel.pop(num-1)
   nota.pop(num-1)
   valor.pop(num-1)
+  print("Exclusão realizada com sucesso!")
   
 
 
@@ -101,13 +101,21 @@ def totalizar():
   print(f"Nº Hotéis Cadastrados: {num}")
 
 
-  print(f"Total  ☆: {soma:9.2f}")
+  print(f"Total  ☆: {soma:9}")
 
 
 
 def descontar():
-  pass
+  titulo("Aplicação de Descontos")
 
+  num = int(input("Quantos '%' de desconto deseja aplicar?"))
+
+  desc = num /100
+
+  for c in range(len(valor)):
+    valor[c] = valor[c] - (valor[c] * desc)
+
+  listar()
 
 
 
